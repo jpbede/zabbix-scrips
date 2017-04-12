@@ -10,17 +10,15 @@ lineiterator = iter(peers)
 
 first = True
 
-print("{")
-print("\t\"data\":[")
+print "{\t\"data\":[" 
 
 for peer in lineiterator:
 
     if "description" in peer:
        if not first:
-	  print(",")
+	  print ","
 
        print "\t\t{\"{#PEERNAME}\":\"%s\", \"{#PROTONAME}\":\"%s\" }" % (peer["description"], peer["name"])
        first = False
 
-print("\t]")
-print("}")
+print "\t]}"
